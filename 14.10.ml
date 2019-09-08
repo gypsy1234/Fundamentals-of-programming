@@ -71,8 +71,7 @@ let lst4 = [{namae = "yoshida"; tensuu = 80; seiseki = "A"};
 (* 目的：受け取った学生リスト lst の得点の合計を返す *) 
 (* gakusei_sum : gakusei_t list -> int *) 
 let gakusei_sum lst = 
-  List.fold_right (fun gakusei rest_result -> match gakusei with 
-    {namae = n; tensuu = t; seiseki = s} -> t + rest_result) 
+  List.fold_right (fun {namae = n; tensuu = t; seiseki = s} rest_result -> t + rest_result) 
   lst 0 
  
 (* テスト *) 
